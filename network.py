@@ -1,13 +1,14 @@
 import socket
 
 class Network:
-    def _init_(self):
-        self.client = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-        self.server = "138.38.242.191"
-        self.port = 5000
-        self.addr = (self.server , self.port)
-        self.id = self.connect()
-        print(self.id)
+    def __init__(self):
+        self.client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.server = "138.38.242.150"
+        self.port = 5555
+        self.addr = (self.server, self.port)
+        self.p = self.connect()
+        print(self.p)
+        
 
     def connect(self):
         try:
@@ -16,4 +17,13 @@ class Network:
         except:
             pass
     
+    def send(self,data):
+        try:
+            self.client.send(str.encode(data))
+            return self.client.recv(2048).decode()
+        except socket.error as e:
+            print(e)
+    
 n = Network()
+print(n.send("hello"))
+print(n.send("world"))
