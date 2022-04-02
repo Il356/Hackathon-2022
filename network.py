@@ -3,7 +3,7 @@ import socket
 class Network:
     def _init_(self):
         self.client = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-        self.sever = "138.38.242.150"
+        self.server = "138.38.242.191"
         self.port = 5000
         self.addr = (self.server , self.port)
         self.id = self.connect()
