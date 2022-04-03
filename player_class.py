@@ -23,7 +23,7 @@ class player():
 		ships[chosen_ship].heal
 
 	def move(self,chosen_ship):
-		ships[chose_ship].move
+		ships[chosen_ship].move
 
 		
 			

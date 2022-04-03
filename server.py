@@ -1,6 +1,7 @@
 import sys
 from _thread import *
 import socket
+import pickle
 
 server = "138.38.242.150"
 port = 5555
@@ -13,7 +14,7 @@ except socket.error as e:
     str(e)
 
 s.listen(2)
-print("waiting for connection, Sever Started")
+print("Waiting for connection, Server Started")
 
 def threaded_client(conn):
     conn.send(str.encode("Connected"))
